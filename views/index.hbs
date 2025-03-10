@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- User's Name (Top Center) -->
+    <h1 class="name-header">{{userName}}</h1>
+
+    <!-- User's Email (Top Right) with Logout Hover Effect -->
+    <a href="/logout" class="user-info" id="logout-link">{{userEmail}}</a>
+
+    <!-- Gallery Layout -->
+    <div class="gallery-container">
+        
+        <!-- Image Selection (Left Side) -->
+        <form action="/image" method="POST" class="selection-section">  <!-- CHANGED TO POST -->
+            {{#each images}}
+                <div>
+                    <input type="radio" name="image" value="{{this}}" id="{{this}}" 
+                        {{#if (eq this ../selectedImage)}}checked{{/if}} >
+                    <label for="{{this}}">{{removeExtension this}}</label>
+                </div>
+            {{/each}}
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <!-- Selected Image Display (Right Side) -->
+        <div class="image-box">
+            <img src="/images/{{selectedImage}}" alt="Selected Image">
+            <div class="image-name">{{removeExtension selectedImage}}</div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Smooth Logout Hover Effect -->
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const logoutLink = document.getElementById("logout-link");
+        const originalText = logoutLink.innerText;
+
+        logoutLink.style.transition = "all 0.3s ease-in-out"; // Ensure transition applies from start
+
+        logoutLink.addEventListener("mouseenter", () => {
+            logoutLink.innerText = "Logout";
+        });
+
+        logoutLink.addEventListener("mouseleave", () => {
+            logoutLink.innerText = originalText;
+        });
+    });
+</script>
+
+</body>
+</html>

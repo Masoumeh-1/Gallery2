@@ -1,0 +1,129 @@
+/* General Page Styles */
+body { 
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin: 30px;
+    padding: 0;
+}
+
+/* Name at the Top */
+.name-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Login Container */
+.login-container {
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid lightblue;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+/* Input Fields */
+.input-box {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: lightgray;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: gray;
+    color: white;
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+/* User Info (Top Right Corner) */
+.user-info {
+    position: absolute;
+    top: 100px; /* Adjust this based on your layout */
+    right: 80px; 
+    font-size: 20px;
+    font-weight: bold;
+    color: #5c5c5c;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.user-info:hover {
+    color: blue;
+}
+
+
+/* Gallery Container */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+/* Selection Section */
+.selection-section {
+    text-align: left;
+    position: absolute;
+    left: 50px;
+    top: 150px;
+}
+
+/* Image Box */
+.image-box {
+    border: 2px solid #b3e5fc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Image Resizing */
+.image-box img {
+    max-width: 400px;
+    height: auto;
+}
+
+/* Image Name */
+.image-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: black;
+}
+
+
+.user-info {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.user-info:hover {
+    color: blue;
+    text-decoration: underline;
+    content: "Logout";
+}
